@@ -63,6 +63,7 @@ class ChatLogViewController: UIViewController {
     // MARK: - Private Methods
     private func setupTableView() {
         tableView.keyboardDismissMode = .interactive
+        tableView.register(UINib(nibName: "ChatLogTableViewCell", bundle: nil), forCellReuseIdentifier: "chatLogTableViewCell")
         tableView.tableFooterView = UIView()
     }
     
@@ -77,21 +78,12 @@ class ChatLogViewController: UIViewController {
     private func sendMessage() {
         if let messageText = messageTextField.text, messageText.count > 0 {
             let message = Message(id: UUID().uuidString, timestamp: Date().timeIntervalSince1970, fromUser: Preferences.fromUser!, toUser: Preferences.toUser!, text: messageText)
-            RealmHelper.save(messages: [message], in: realm)
+            RealmHelper.save([message], in: realm)
             FirebaseManager.shared.send(message)
         }
     }
     
-    private func constructMessage(with text: String) -> Message {
-        let message = Message()
-        message.id = UUID().uuidString
-        message.fromUser = Preferences.fromUser!
-        message.toUser = Preferences.toUser!
-        message.timestamp = Date().timeIntervalSince1970
-        message.text = text
-        return message
-    }
-    
+    // MARK: - Selector Methods
     @objc func sendMessageClicked(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Message Box", message: nil, preferredStyle: .alert)
         alertController.addTextField { (textfield) in
@@ -122,17 +114,28 @@ extension ChatLogViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell?
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chatLogTableViewCell") as! ChatLogTableViewCell
         let message = messages![indexPath.row]
-        cell?.textLabel?.font = UIFont.systemFont(ofSize: 10)
-        cell?.detailTextLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        cell?.textLabel?.text = message.fromUser
-        cell?.detailTextLabel?.text = message.text
-        return cell!
+        cell.userNameLabel.font = UIFont.systemFont(ofSize: 10)
+        cell.messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        cell.userNameLabel.text = message.fromUser
+        cell.messageLabel.text = message.text
+        return cell
     }
 }
 
+// MARK: - UITableViewDelegate
+extension ChatLogViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let message = messages![indexPath.row]
+        if let cell = cell as? ChatLogTableViewCell {
+            cell.userNameLabel.textAlignment = message.fromUser == Preferences.fromUser! ? .right : .left
+            cell.messageLabel.textAlignment = message.fromUser == Preferences.fromUser! ? .right : .left
+        }
+    }
+}
 
+// MARK: - UITextFieldDelegate
 extension ChatLogViewController : UITextFieldDelegate {
     
 }

@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Choose User"
+      //  FirebaseManager.shared.fetchAllMessages()
     }
     
     // MARK: - Public Methods

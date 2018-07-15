@@ -17,11 +17,11 @@
 		A457882920FA0E89006C149E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457882820FA0E89006C149E /* Preferences.swift */; };
 		A457882B20FA1421006C149E /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457882A20FA1421006C149E /* ChatLogViewController.swift */; };
 		A457882D20FA16EB006C149E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457882C20FA16EB006C149E /* Message.swift */; };
-		A457883320FA2FDB006C149E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457883220FA2FDB006C149E /* InputView.swift */; };
-		A457883520FA2FF6006C149E /* InputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A457883420FA2FF6006C149E /* InputView.xib */; };
 		A457883720FA3194006C149E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457883620FA3194006C149E /* Extensions.swift */; };
 		A480C25620FA4BCF0076DB7A /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480C25520FA4BCF0076DB7A /* RealmHelper.swift */; };
 		A480C25820FA6F1A0076DB7A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480C25720FA6F1A0076DB7A /* FirebaseManager.swift */; };
+		A4DD040920FB7B0F00C266F3 /* ChatLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD040720FB7B0F00C266F3 /* ChatLogTableViewCell.swift */; };
+		A4DD040A20FB7B0F00C266F3 /* ChatLogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DD040820FB7B0F00C266F3 /* ChatLogTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +39,11 @@
 		A457882820FA0E89006C149E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A457882A20FA1421006C149E /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		A457882C20FA16EB006C149E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		A457883220FA2FDB006C149E /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		A457883420FA2FF6006C149E /* InputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputView.xib; sourceTree = "<group>"; };
 		A457883620FA3194006C149E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A480C25520FA4BCF0076DB7A /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		A480C25720FA6F1A0076DB7A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		A4DD040720FB7B0F00C266F3 /* ChatLogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogTableViewCell.swift; sourceTree = "<group>"; };
+		A4DD040820FB7B0F00C266F3 /* ChatLogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +113,8 @@
 		A457883020FA1887006C149E /* Chat Log */ = {
 			isa = PBXGroup;
 			children = (
-				A457883420FA2FF6006C149E /* InputView.xib */,
-				A457883220FA2FDB006C149E /* InputView.swift */,
 				A457882A20FA1421006C149E /* ChatLogViewController.swift */,
+				A4DD040B20FB855000C266F3 /* TableViewCells */,
 			);
 			path = "Chat Log";
 			sourceTree = "<group>";
@@ -137,6 +136,15 @@
 				A480C25520FA4BCF0076DB7A /* RealmHelper.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		A4DD040B20FB855000C266F3 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A4DD040720FB7B0F00C266F3 /* ChatLogTableViewCell.swift */,
+				A4DD040820FB7B0F00C266F3 /* ChatLogTableViewCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,10 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A457881B20F9F541006C149E /* LaunchScreen.storyboard in Resources */,
+				A4DD040A20FB7B0F00C266F3 /* ChatLogTableViewCell.xib in Resources */,
 				A457882720FA0921006C149E /* GoogleService-Info.plist in Resources */,
 				A457881820F9F541006C149E /* Assets.xcassets in Resources */,
 				A457881620F9F53F006C149E /* Main.storyboard in Resources */,
-				A457883520FA2FF6006C149E /* InputView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +276,9 @@
 				A457881120F9F53F006C149E /* AppDelegate.swift in Sources */,
 				A480C25820FA6F1A0076DB7A /* FirebaseManager.swift in Sources */,
 				A457882D20FA16EB006C149E /* Message.swift in Sources */,
-				A457883320FA2FDB006C149E /* InputView.swift in Sources */,
 				A480C25620FA4BCF0076DB7A /* RealmHelper.swift in Sources */,
 				A457882920FA0E89006C149E /* Preferences.swift in Sources */,
+				A4DD040920FB7B0F00C266F3 /* ChatLogTableViewCell.swift in Sources */,
 				A457882B20FA1421006C149E /* ChatLogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

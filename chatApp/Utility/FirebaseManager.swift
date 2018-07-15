@@ -36,18 +36,27 @@ final class FirebaseManager {
     
     func observe() {
         Reference().messagesReference.observe(.childAdded) { (snapshot) in
-            print(snapshot, snapshot.key)
             guard let message = snapshot.value as? [String:Any] else { return }
             if message["fromUser"] as? String != Preferences.fromUser! {
-                let message = Message(id: snapshot.key, timestamp: message["timestamp"] as! Double, fromUser: message["fromUser"] as! String, toUser: message["toUser"] as! String, text: message["text"] as! String)
-                RealmHelper.save(messages: [message], in: self.realm)
+//                let message = Message(id: snapshot.key, timestamp: message["timestamp"] as! Double, fromUser: message["fromUser"] as! String, toUser: message["toUser"] as! String, text: message["text"] as! String)
+                RealmHelper.save([self.createMessageObject(with: snapshot.key, and: message)], in: self.realm)
             }
         }
     }
     
     func fetchAllMessages() {
         Reference().messagesReference.observeSingleEvent(of: .value) { (snapshot) in
-            print(snapshot)
+            guard let messagesDictionary = snapshot.value as? [String:Any] else {return}
+            var messages = [Message]()
+            for key in messagesDictionary.keys {
+                let values = messagesDictionary[key] as! [String:Any]
+                messages.append(self.createMessageObject(with: key, and: values))
+            }
+            RealmHelper.save(messages, in: self.realm)
         }
+    }
+    
+    private func createMessageObject(with key: String, and values: [String:Any]) -> Message{
+        return Message(id: key, timestamp: values["timestamp"] as! Double, fromUser: values["fromUser"] as! String, toUser: values["toUser"] as! String, text: values["text"] as! String)
     }
 }

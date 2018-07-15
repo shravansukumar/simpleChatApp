@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class RealmHelper {
-    class func save(messages: [Message], in realm: Realm) {
+    class func save(_ messages: [Message], in realm: Realm) {
         try! realm.write {
             realm.add(messages, update: true)
         }
