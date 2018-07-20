@@ -13,13 +13,13 @@
 		A457881620F9F53F006C149E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A457881420F9F53F006C149E /* Main.storyboard */; };
 		A457881820F9F541006C149E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A457881720F9F541006C149E /* Assets.xcassets */; };
 		A457881B20F9F541006C149E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A457881920F9F541006C149E /* LaunchScreen.storyboard */; };
-		A457882720FA0921006C149E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A457882620FA0921006C149E /* GoogleService-Info.plist */; };
 		A457882920FA0E89006C149E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457882820FA0E89006C149E /* Preferences.swift */; };
 		A457882B20FA1421006C149E /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457882A20FA1421006C149E /* ChatLogViewController.swift */; };
 		A457882D20FA16EB006C149E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457882C20FA16EB006C149E /* Message.swift */; };
 		A457883720FA3194006C149E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A457883620FA3194006C149E /* Extensions.swift */; };
 		A480C25620FA4BCF0076DB7A /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480C25520FA4BCF0076DB7A /* RealmHelper.swift */; };
 		A480C25820FA6F1A0076DB7A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480C25720FA6F1A0076DB7A /* FirebaseManager.swift */; };
+		A4967E002102326900B7F6F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4967DFF2102326900B7F6F8 /* GoogleService-Info.plist */; };
 		A4DD040920FB7B0F00C266F3 /* ChatLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD040720FB7B0F00C266F3 /* ChatLogTableViewCell.swift */; };
 		A4DD040A20FB7B0F00C266F3 /* ChatLogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DD040820FB7B0F00C266F3 /* ChatLogTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -35,13 +35,13 @@
 		A457881720F9F541006C149E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A457881A20F9F541006C149E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A457881C20F9F541006C149E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A457882620FA0921006C149E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A457882820FA0E89006C149E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A457882A20FA1421006C149E /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		A457882C20FA16EB006C149E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A457883620FA3194006C149E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A480C25520FA4BCF0076DB7A /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		A480C25720FA6F1A0076DB7A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		A4967DFF2102326900B7F6F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4DD040720FB7B0F00C266F3 /* ChatLogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogTableViewCell.swift; sourceTree = "<group>"; };
 		A4DD040820FB7B0F00C266F3 /* ChatLogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +104,7 @@
 				A457881420F9F53F006C149E /* Main.storyboard */,
 				A457881720F9F541006C149E /* Assets.xcassets */,
 				A457881920F9F541006C149E /* LaunchScreen.storyboard */,
-				A457882620FA0921006C149E /* GoogleService-Info.plist */,
+				A4967DFF2102326900B7F6F8 /* GoogleService-Info.plist */,
 				A457881C20F9F541006C149E /* Info.plist */,
 			);
 			path = chatApp;
@@ -209,7 +209,7 @@
 			files = (
 				A457881B20F9F541006C149E /* LaunchScreen.storyboard in Resources */,
 				A4DD040A20FB7B0F00C266F3 /* ChatLogTableViewCell.xib in Resources */,
-				A457882720FA0921006C149E /* GoogleService-Info.plist in Resources */,
+				A4967E002102326900B7F6F8 /* GoogleService-Info.plist in Resources */,
 				A457881820F9F541006C149E /* Assets.xcassets in Resources */,
 				A457881620F9F53F006C149E /* Main.storyboard in Resources */,
 			);
